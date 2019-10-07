@@ -1,7 +1,6 @@
 let _emitChannels = ()=>{};
 console = new Proxy(console, {
     get: (target, p)=>{
-
         return function(...args) {
             let stack;
             let path;
@@ -40,7 +39,6 @@ function regex(stack){
     return path;
 }
 
-
 function printLog(path,key,args){
     let viewPath = `\n===>>> ${path}`;
     console.warn('\x1b[36m%s\x1b[32m',viewPath);
@@ -48,4 +46,4 @@ function printLog(path,key,args){
 
 module.exports = (options) => {
     _emitChannels = options.emitChannels
-}
+};
